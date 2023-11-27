@@ -32,10 +32,12 @@ chmod +X DockerSQLBackup.sh
  
 echo "0 0 * * 0 /share/DOCKERMEDIA/DockerScripts/DockerSQLBackup.sh" >> /etc/config/crontab
 
-3) restart crontab
+3) Make crontab see the changes
+ crontab /etc/config/crontab
+4) restart crontab
 
 crontab /etc/config/crontab && /etc/init.d/crond.sh restart
 
-4) Validate
+5) Validate
 
 crontab -l
